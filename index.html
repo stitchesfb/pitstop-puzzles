@@ -678,7 +678,7 @@ body.cqplay .app{padding-bottom:110px}
   <!-- LEADERS -->
   <section class="view dark" id="v-leaders" hidden>
     <div><div class="where muted small" data-t="shop"></div><h1 style="font-size:2rem">This week's leaders</h1></div>
-    <div class="prize"><svg class="gift" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="15" width="30" height="21" rx="4" fill="#ff6b57"/><rect x="3" y="10" width="34" height="8" rx="3" fill="#ff9e45"/><rect x="17" y="10" width="6" height="26" fill="#ffd23f"/><path d="M20 10c-3-6-10-6-9-1 1 3 6 2 9 1zm0 0c3-6 10-6 9-1-1 3-6 2-9 1z" fill="#ffd23f"/></svg><p><b>Top score Sunday night wins <span data-t="prize"></span>.</b><br><span class="muted small">Points from all seven games count.</span></p></div>
+    <div class="prize"><svg class="gift" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="15" width="30" height="21" rx="4" fill="#ff6b57"/><rect x="3" y="10" width="34" height="8" rx="3" fill="#ff9e45"/><rect x="17" y="10" width="6" height="26" fill="#ffd23f"/><path d="M20 10c-3-6-10-6-9-1 1 3 6 2 9 1zm0 0c3-6 10-6 9-1-1 3-6 2-9 1z" fill="#ffd23f"/></svg><p><b>Top score this week wins <span data-t="prize"></span>!</b><br><span class="muted small">Points from all games count.</span></p></div>
     <div class="podium" id="podium"></div>
     <div class="list" id="boardList"></div>
     <div class="field" id="nameField" hidden><label for="initials">Your name on the board</label><input id="initials" maxlength="10" placeholder="Initials or first name" autocomplete="off"></div>
@@ -713,9 +713,9 @@ body.cqplay .app{padding-bottom:110px}
 </div>
 
 <script>
-const DEFAULTS={shop:"Shore Auto Service · Toms River",sponsor:"Boardwalk Bagel Co.",offer:"Free coffee with any bagel sandwich",prize:"a free oil change"};
+const DEFAULTS={shop:"Shore Auto Service · Toms River",sponsor:"Boardwalk Bagel Co.",offer:"Free coffee with any bagel sandwich",prize:"a prize"};
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let cfg=Object.assign({},DEFAULTS,store.get("pit2.cfg",{}));
+let cfg=Object.assign({},DEFAULTS,store.get("pit2.cfg",{}));if(/oil/i.test(cfg.prize))cfg.prize=DEFAULTS.prize;
 const $=s=>document.querySelector(s);
 const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
 const now=new Date();const dayKey=now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate();
@@ -817,7 +817,7 @@ function renderHome(){
   top.append(ico,tx);rc.append(top);
   const m=el("div","meter");const mi=el("i");mi.style.width=(n/GAMES.length*100)+"%";m.append(mi);rc.append(m);
   const r=rows(),me=r.findIndex(x=>x.you),sk=streakInfo();
-  const stt=el("div","rstats");stt.innerHTML="<span><b>"+n+" of "+GAMES.length+"</b> games today</span><span>"+(me>=0?"This week: <b>#"+(me+1)+"</b> · "+st.weekPts.toLocaleString()+" pts":(sk.count>0?"🔥 "+sk.count+"-day streak":"Weekly prize: "+cfg.prize))+"</span>";rc.append(stt);
+  const stt=el("div","rstats");stt.innerHTML="<span><b>"+n+" of "+GAMES.length+"</b> games today</span><span>"+(me>=0?"This week: <b>#"+(me+1)+"</b> · "+st.weekPts.toLocaleString()+" pts":(sk.count>0?"🔥 "+sk.count+"-day streak":"Top score this week wins a prize"))+"</span>";rc.append(stt);
   const vb=el("button","btn",n&&!st.scratched?"Scratch my reward":"View rewards");vb.onclick=()=>go("reward");rc.append(vb);
   if(n>0&&!st.cel){st.cel=true;save();setTimeout(()=>confetti(80),250);}
 }
