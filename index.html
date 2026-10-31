@@ -713,9 +713,9 @@ body.cqplay .app{padding-bottom:110px}
 </div>
 
 <script>
-const DEFAULTS={shop:"Shore Auto Service · Toms River",sponsor:"Boardwalk Bagel Co.",offer:"Free coffee with any bagel sandwich",prize:"a prize"};
+const DEFAULTS={shop:"Shore Auto Service · Toms River",sponsor:"Your Sponsor",offer:"Your sponsor's offer goes here",prize:"a prize"};
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let cfg=Object.assign({},DEFAULTS,store.get("pit2.cfg",{}));if(/oil/i.test(cfg.prize))cfg.prize=DEFAULTS.prize;
+let cfg=Object.assign({},DEFAULTS,store.get("pit2.cfg",{}));if(/oil/i.test(cfg.prize))cfg.prize=DEFAULTS.prize;if(/boardwalk/i.test(cfg.sponsor)){cfg.sponsor=DEFAULTS.sponsor;cfg.offer=DEFAULTS.offer;}
 const $=s=>document.querySelector(s);
 const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
 const now=new Date();const dayKey=now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate();
@@ -1487,9 +1487,9 @@ function renderReward(){
   if(played()===0){const l=el("div","panel locked");l.innerHTML='<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="28" width="40" height="28" rx="8" fill="#ffd23f"/><path d="M20 28v-6a12 12 0 0 1 24 0v6" fill="none" stroke="#10233d" stroke-width="6" stroke-linecap="round"/><circle cx="32" cy="42" r="4" fill="#10233d"/></svg>';
     l.append(el("h2",null,"Your reward is locked"),el("p",null,"Finish any one game to unlock today's offer from "+cfg.sponsor+"."));const b=el("button","btn","Pick a game");b.onclick=()=>go("home");l.append(b);box.append(l);return}
   if(!st.code){const A="ABCDEFGHJKMNPQRSTUVWXYZ23456789";st.code="PIT-"+Array.from({length:4},()=>A[Math.floor(Math.random()*A.length)]).join("");save();}
-  const t=el("div","ticket");const top=el("div","tophalf");top.append(el("small",null,"Sample sponsor reward · today only"),el("h2",null,cfg.offer),el("p",null,"at "+cfg.sponsor));
-  const bot=el("div","bottom");const note=el("p","small","One code per customer per day");note.style.color="#5a6f8a";
-  bot.append(el("p",null,"Show this screen at the counter"),el("div","code",st.code),note);
+  const t=el("div","ticket");const top=el("div","tophalf");top.append(el("small",null,"Sample coupon · demo"),el("h2",null,cfg.offer),el("p",null,"from "+cfg.sponsor));
+  const bot=el("div","bottom");const note=el("p","small","This is a demo coupon and can't be redeemed. Participating businesses show their real offer here.");note.style.color="#5a6f8a";
+  bot.append(el("div","code","DEMO"),note);
   if(st.bonus)top.append(el("span","bonus","+"+st.bonus+" bonus points"));
   t.append(top,el("div","tear"),bot);
   if(st.scratched){box.append(t);}else{
