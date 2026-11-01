@@ -670,8 +670,8 @@ body.cqplay .app{padding-bottom:110px}
     </button>
     </div>
 
-    <div class="osec"><h3>Service specials</h3><span class="dslot"></span></div>
-    <p class="onote">Example offers from gatewaytoyota.com (Oct 2026) · swipe for more</p>
+    <div class="osec"><h3>Service specials · Examples</h3><span class="dslot"></span></div>
+    <p class="onote">Demonstration examples only — not current or approved offers. Based on gatewaytoyota.com (Oct 2026). Swipe for more.</p>
     <div class="offers" id="offers"></div>
 
     <div class="rcard" id="rcard"></div>
@@ -681,8 +681,6 @@ body.cqplay .app{padding-bottom:110px}
       <p><small>Today's games brought to you by</small><b data-t="sponsor"></b><br><span data-t="offerShort"></span></p>
       <button class="spbtn" id="spBtn">View reward</button>
     </div>
-    <button class="biz" id="bizBtn" hidden><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></svg></span><span><small>Own a business?</small><b>Get free games like these for your waiting room</b></span><span class="arr" aria-hidden="true">›</span></button>
-    <div class="foot" hidden><button class="linkish" id="openSettings">Personalize this demo</button></div>
     <p class="powered">Powered by <b>Pit Stop Puzzles</b></p>
   </section>
 
@@ -744,11 +742,10 @@ body.cqplay .app{padding-bottom:110px}
   <!-- LEADERS -->
   <section class="view dark" id="v-leaders" hidden>
     <div><div class="where muted small" data-t="shop"></div><h1 style="font-size:2rem">This week's leaders</h1></div>
-    <div class="prize"><svg class="gift" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="15" width="30" height="21" rx="4" fill="#ff6b57"/><rect x="3" y="10" width="34" height="8" rx="3" fill="#ff9e45"/><rect x="17" y="10" width="6" height="26" fill="#ffd23f"/><path d="M20 10c-3-6-10-6-9-1 1 3 6 2 9 1zm0 0c3-6 10-6 9-1-1 3-6 2-9 1z" fill="#ffd23f"/></svg><p><b>Top score this week wins <span data-t="prize"></span>!</b><span class="propose">Proposed prize — Subject to dealership approval.</span><span class="courtesy" style="justify-content:flex-start">Hosted by <span class="dslot"></span></span><br><span class="muted small">Points from all games count. The week runs Monday to Sunday, and scores reset every Monday.</span></p></div>
+    <div class="prize"><svg class="gift" viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="15" width="30" height="21" rx="4" fill="#ff6b57"/><rect x="3" y="10" width="34" height="8" rx="3" fill="#ff9e45"/><rect x="17" y="10" width="6" height="26" fill="#ffd23f"/><path d="M20 10c-3-6-10-6-9-1 1 3 6 2 9 1zm0 0c3-6 10-6 9-1-1 3-6 2-9 1z" fill="#ffd23f"/></svg><p><b id="prizeHead">Compete for the top score this week!</b><span class="propose">Proposed prize — Subject to dealership approval.</span><span class="courtesy" style="justify-content:flex-start">Hosted by <span class="dslot"></span></span><br><span class="muted small">Points from all games count. The week runs Monday to Sunday, and scores reset every Monday.</span></p></div>
     <div class="podium" id="podium"></div>
     <div class="list" id="boardList"></div>
     <div class="field" id="nameField" hidden><label for="initials">Your name on the board</label><input id="initials" maxlength="10" placeholder="Initials or first name" autocomplete="off"></div>
-    <button class="lead-link" id="bizLink2" hidden>Want games like these at your business?</button>
     <p class="muted small">Demonstration data: the other names and scores are samples, not real customers. In the live version, everyone who plays at the dealership appears here.</p>
   </section>
 
@@ -765,18 +762,6 @@ body.cqplay .app{padding-bottom:110px}
   <button class="tab" data-tab="leaders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg>Leaders</button>
   <button class="tab" data-tab="reward"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3a2 2 0 0 0 0-6V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3z"/><path d="M14 4v16" stroke-dasharray="2 3"/></svg>Reward<span class="badge" id="rewardDot" hidden></span></button>
 </nav></div>
-
-<div class="sheet" id="settings" hidden>
-  <form class="panel" id="settingsForm">
-    <h2>Personalize this demo</h2>
-    <p class="small" style="color:#5a6f8a">Type a shop's names to show the owner their own version. Saved on this phone only.</p>
-    <div class="field"><label for="s-shop">Shop name</label><input id="s-shop" maxlength="40"></div>
-    <div class="field"><label for="s-sponsor">Sponsor business</label><input id="s-sponsor" maxlength="36"></div>
-    <div class="field"><label for="s-offer">Sponsor reward</label><input id="s-offer" maxlength="48"></div>
-    <div class="field"><label for="s-prize">Weekly prize from the shop</label><input id="s-prize" maxlength="40"></div>
-    <div class="row end"><button type="button" class="btn alt" id="resetSettings">Example names</button><button class="btn">Save</button></div>
-  </form>
-</div>
 
 <script>
 const DEFAULTS={shop:"Gateway Toyota · Service Center",sponsor:"Gateway Toyota",offer:"FREE Video Multi-Point Inspection",prize:"a prize"};
@@ -802,21 +787,6 @@ function markStreak(){const s=store.get("pitT.streak",{last:null,count:0});const
   if(s.last===today)return;s.count=(s.last!==null&&today-s.last===1)?s.count+1:1;s.last=today;store.set("pitT.streak",s);}
 
 
-// ---------- BUSINESS LEADS (your company) ----------
-// TODO: fill in your real details; empty fields show as disabled buttons.
-const CONTACT={company:"Your Company Name",phone:"",email:"",web:""};
-function bizSheet(){const sh=el("div","bizsheet");const p=el("div","panel");
-  p.append(el("h2",null,"Bring these games to your business"),(()=>{const u=el("ul");["Free for your customers: no app, no sign-up","Local sponsors help cover the cost","Your logo, your offers, your prizes","Set up in a day with posters and QR codes"].forEach(t=>u.append(el("li",null,t)));return u})());
-  const g=el("div","bizbtns");const tel=CONTACT.phone.replace(/[^0-9+]/g,"");
-  const mk=(cls,txt,href)=>{const a=el("a",cls+(href?"":" off"),txt);if(href){a.href=href;if(href.startsWith("http")){a.target="_blank";a.rel="noopener";}}g.append(a);};
-  mk("main","📞 Call "+(CONTACT.phone||"(phone coming soon)"),tel?"tel:"+tel:"");
-  mk("","💬 Text us",tel?"sms:"+tel+"?&body="+encodeURIComponent("Hi! I saw your waiting-room games and I'd like info for my business."):"");
-  mk("","✉️ Email",CONTACT.email?"mailto:"+CONTACT.email+"?subject="+encodeURIComponent("Waiting-room games for my business"):"");
-  mk("main","🌐 Visit our website",CONTACT.web?(CONTACT.web.startsWith("http")?CONTACT.web:"https://"+CONTACT.web):"");
-  g.lastChild.style.background="#10233d";g.lastChild.style.boxShadow="none";
-  p.append(g,el("p","bizco","Pit Stop Puzzles by "+CONTACT.company));
-  const c=el("button","btn alt wide","Close");c.onclick=()=>sh.remove();p.append(c);sh.append(p);sh.onclick=e=>{if(e.target===sh)sh.remove();};document.body.append(sh);}
-
 // ---------- HELP (instructions per game) ----------
 const HELP={
  cq:["Color Quest",["Pick a picture to color.","Choose a color at the bottom. Every space with that number lights up gray.","Tap the spaces with that number to paint them.","Pinch or double-tap to zoom in. Drag to move around.","Stuck? 💡 shows you a space you missed (3 per picture)."],"Your progress saves automatically on this phone, so you can finish it later."],
@@ -838,15 +808,15 @@ document.querySelectorAll(".view .top").forEach(t=>{const ch=t.querySelector(".c
 // ---------- DEALER OFFERS (from gatewaytoyota.com) ----------
 const OFFERS=[["Tires", "Tire Event", "Buy 3 tires, get the 4th for", "", "$1", ".00", ""], ["Oil", "Oil & Filter Change", "5 quart", "Starting at", "$84", ".95", "reg. $109.95"], ["Savings", "Spend More, Save More", "On your service visit", "Up to", "$100", " Off", ""], ["Maintenance", "Pre-Paid Maintenance Package", "3 oil changes, tire rotation & video multi-point every visit", "Starting at", "$215", ".00", "plus tax"], ["Tires", "4-Wheel Alignment", "With purchase of 4 tires", "", "$109", ".95", ""], ["Brakes", "Brake Special", "", "", "$75", ".00", "off per axle"], ["Tires", "4-Wheel Alignment", "", "", "$139", ".95", "reg. $159.95"], ["Parts", "Parts & Accessories Discount", "", "", "15%", " Off", ""], ["Diagnostics", "Vehicle Diagnostics", "Valued at $195/hr", "", "$25", " Off", ""], ["Inspection", "Video Multi-Point Inspection", "", "", "FREE", "", ""], ["Filters", "Air Filter Combo", "Installation included", "Starting at", "$99", ".95", ""], ["Wipers", "All-Weather Hybrid Wiper Blades", "Installation included", "Regularly $49.95", "$34", ".95", "per pair, installed"], ["Brakes", "Brake Fluid Service", "", "", "$159", ".95", "reg. $199.95"], ["Tires", "Tire Rotation + Balancing", "4-wheel rotation plus tire balancing", "", "$119", ".95", "reg. $139.95"], ["Check-up", "Alignment, Battery & Brake Check", "Complimentary with every service", "", "FREE", "", ""], ["Thank you", "Military, First Responders & Teachers", "Discount on service", "", "10%", " Off", ""]];
 function offerEl(o,mini){const [k,t,d,pre,p,c,post]=o;const b=el("div","doffer"+(mini?" mini":""));b.append(el("span","bar"));const inn=el("div","in");
-  const tx=mini?el("div","tx"):inn;tx.append(el("span","k",k),el("h4",null,t));if(!mini)tx.append(el("span","d",d));
+  const tx=mini?el("div","tx"):inn;tx.append(el("span","k","Demo example · "+k),el("h4",null,t));if(!mini)tx.append(el("span","d",d));
   if(pre&&!mini)tx.append(el("span","pre",pre));const pr=el("div","pr");pr.textContent=p;if(c){pr.append(el("sup",null,c));}tx.append(pr);if(post&&!mini)tx.append(el("span","post",post));
-  if(mini)inn.append(tx);const a=el("button","ask",mini?"Ask":"Ask my advisor");a.onclick=e=>{e.stopPropagation();offerSheet(o);};inn.append(a);b.append(inn);return b;}
+  if(mini)inn.append(tx);const a=el("button","ask",mini?"How it works":"How this would work");a.onclick=e=>{e.stopPropagation();offerSheet(o);};inn.append(a);b.append(inn);return b;}
 function offerSheet(o){const sh=el("div","osheet");const card=offerEl(o);card.querySelector(".ask").remove();const inn=card.querySelector(".in");
-  inn.append(el("div","tell","Example: in the live version, customers show this screen to their service advisor."),el("p","exnote","Prices from gatewaytoyota.com in Oct 2026 and may change."));
+  inn.append(el("div","tell","Demonstration example — not a current or approved offer. In the live version, customers would show this screen to their service advisor."),el("p","exnote","Based on gatewaytoyota.com in Oct 2026. Prices may change."));
   const c=el("button","close","Close");c.onclick=()=>sh.remove();inn.append(c);sh.append(card);sh.onclick=e=>{if(e.target===sh)sh.remove();};document.body.append(sh);}
 function renderOffers(){const w=$("#offers");if(!w||w.childElementCount)return;const r=rng(dayKey+"offers");OFFERS.map((o,i)=>[r(),o]).sort((a,b)=>a[0]-b[0]).forEach(([_,o])=>w.append(offerEl(o)));}
 let offerTurn=0;function nextOffer(){const r=rng(dayKey+"pick");const base=Math.floor(r()*OFFERS.length);return OFFERS[(base+offerTurn++)%OFFERS.length];}
-function addOfferTo(p){const h=el("p","small","While you wait:");h.style.cssText="color:#5a6f8a;font-weight:700;margin-top:4px";p.append(h,offerEl(nextOffer(),true));}
+function addOfferTo(p){const h=el("p","small","While you wait (demo example):");h.style.cssText="color:#5a6f8a;font-weight:700;margin-top:4px";p.append(h,offerEl(nextOffer(),true));}
 
 // ---------- NAV ----------
 let current="home";
@@ -868,6 +838,7 @@ function names(){
   document.querySelectorAll("[data-t]").forEach(n=>n.textContent=n.dataset.t==="offerShort"?short:n.dataset.t==="spInitial"?ini:cfg[n.dataset.t]);
   $("#spLogo").textContent=(cfg.sponsor.trim()[0]||"S").toUpperCase();
   paintLogos();const hd=$("#hdrDealer");if(hd&&!hd.src)hd.src=LOGO;
+  {const ph=$("#prizeHead");if(ph){const pz=(cfg.prize||"").trim();ph.textContent=pz?"Top score this week wins "+pz+"!":"Compete for the top score this week!";}}
 }
 const TILECOL=["#ff4d5e","#3fa9ff","#ff8a2a","#2ee59d","#a66bff","#ffc93c"];
 function featArt(){const st0=$("#featStage");if(st0.childElementCount)return;
@@ -1584,7 +1555,7 @@ function renderReward(){
     requestAnimationFrame(()=>scratchSetup(cv,sc));}
   const more=el("div","goal");more.append(el("b",null,played()<GAMES.length?"Play the other games to climb the leaderboard":"You played everything today. See you tomorrow!"));
   const b=el("button","btn alt",played()<GAMES.length?"More games":"See the leaderboard");b.onclick=()=>go(played()<GAMES.length?"home":"leaders");b.style.alignSelf="flex-start";more.append(b);box.append(more);
-  const oh=el("h3",null,"Service specials (examples)");oh.style.cssText="font-size:1.1rem;margin-top:4px";box.append(oh,offerEl(nextOffer()));
+  const oh=el("h3",null,"Service specials · Demo examples");oh.style.cssText="font-size:1.1rem;margin-top:4px";box.append(oh,offerEl(nextOffer()));
 }
 
 function scratchSetup(cv,wrap){
@@ -1615,14 +1586,8 @@ function scratchSetup(cv,wrap){
 
 // ---------- WIRING ----------
 $("#ptsBtn").onclick=()=>go("reward");$("#spBtn").onclick=()=>go("reward");
-$("#bizBtn").onclick=bizSheet;$("#bizLink2").onclick=bizSheet;
 $("#g-goal").onclick=startGoal;$("#g-cq").onclick=startCQ;$("#cqBack").onclick=()=>{if(CQ&&current==="cq"&&document.body.classList.contains("cqplay")){$("#cqPal")?.remove();cqList();}else go("home");};
 {const a=$("#cqArt");a.innerHTML='<img src="'+CQP[0].thumb+'" alt="">';a.append(el("span","cqpencil","✏️"));}$("#g-pile").onclick=startPile;
 $("#g-trivia").onclick=startTrivia;$("#g-gems").onclick=startGems;$("#g-park").onclick=startPark;$("#g-word").onclick=startWord;$("#g-mystery").onclick=startMystery;
-const setForm=()=>["shop","sponsor","offer","prize"].forEach(k=>$("#s-"+k).value=cfg[k]);
-$("#openSettings").onclick=()=>{setForm();$("#settings").hidden=false;$("#s-shop").focus();};
-$("#settings").addEventListener("click",e=>{if(e.target.id==="settings")$("#settings").hidden=true;});
-$("#resetSettings").onclick=()=>{cfg=Object.assign({},DEFAULTS);setForm();};
-$("#settingsForm").addEventListener("submit",e=>{e.preventDefault();["shop","sponsor","offer","prize"].forEach(k=>{cfg[k]=$("#s-"+k).value.trim()||DEFAULTS[k];});store.set("pitT.cfg",cfg);$("#settings").hidden=true;go(current==="home"?"home":current);});
 go("home");
 </script>
